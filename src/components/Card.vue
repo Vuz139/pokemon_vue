@@ -14,6 +14,7 @@
           :style="{
             backgroundImage: `url(${require('@/assets/' + imgBackFaceUrl)})`,
           }"
+        
         ></div>
       </div>
     </div>
@@ -36,13 +37,19 @@ export default {
   data() {
     return {
       isFlipped: false,
-      isDisable: false,
+        isDisable: false,
+      isFlipping: false,
     };
   },
   methods: {
     onToggleFlipCard() {
       if (this.isDisable) return;
-      this.isFlipped = !this.isFlipped;
+      if (this.isFlipping) return;
+          this.isFlipped = !this.isFlipped;
+          this.isFlipping = true;
+      setTimeout(() => {
+              this.isFlipping = false;
+      }, 1000)
       if (this.isFlipped) this.$emit("onFlip", this.card);
     },
     onFlipBackCard() {

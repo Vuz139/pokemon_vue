@@ -34,7 +34,12 @@ export default {
     checkRule(card) {
       if (this.rules.length === 2) return false;
 
+      if (this.rules.length > 0) {
+           if (this.rules[0].index === card.index) return;
+      }
+
       this.rules.push(card);
+
 
       if (this.rules.length === 2) {
         if (this.rules[0].card === this.rules[1].card) {
