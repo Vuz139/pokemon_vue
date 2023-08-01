@@ -21,6 +21,8 @@ import MainScreen from "./components/MainScreen.vue";
 import { shuffled } from "./utils/array";
 import ResultScreen from "./components/ResultScreen.vue";
 import CopyRightScreenVue from "./components/CopyRightScreen.vue";
+
+
 export default {
   name: "App",
   data() {
@@ -30,7 +32,7 @@ export default {
         totalOfBlocks: 0,
         cardsContext: [],
         startedAt: null,
-      },
+        },
       timer: 0,
     };
   },
